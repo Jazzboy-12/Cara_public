@@ -19,6 +19,7 @@ export interface ICommand {
 		dm?: boolean;
 		baseXp?: number;
 		modsOnly?: boolean;
+		ModsAdm?: boolean;
 	};
 }
 
