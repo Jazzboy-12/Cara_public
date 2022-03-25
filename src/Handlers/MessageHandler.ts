@@ -119,6 +119,13 @@ export default class MessageHandler {
 		) {
 			return void M.reply(`Only MODS are allowed to use this command.`);
 		}
+		if (
+			command.config?.ModsAdm &&
+			(!this.client.config.mods?.includes(M.sender.jid) || !M.sender.isAdmin)
+			 
+		) {
+			return void M.reply(`Only MODS and Admins are allowed to use this command.`);
+		}
 		if (command.config?.adminOnly && !M.sender.isAdmin)
 			return void M.reply(
 				`This command is only meant for the group admins, Baka!`
